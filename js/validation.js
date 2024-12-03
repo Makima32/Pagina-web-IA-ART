@@ -12,6 +12,8 @@ function validateUploadForm(e) {
   const EMAIL = document.getElementById("email").value.trim();
   const IMAGE = document.getElementById("image-upload").value;
 
+
+
   let valid = true;
 
   if (!USER) {
