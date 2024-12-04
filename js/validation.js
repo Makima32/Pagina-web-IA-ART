@@ -1,7 +1,7 @@
 function listenForValidation() {
-  const uploadForm = document.getElementById("upload-form");
+  const UPLOAD_FORM = document.getElementById("upload-form");
 
-  uploadForm.addEventListener("submit", validateUploadForm);
+  UPLOAD_FORM.addEventListener("submit", validateUploadForm);
 }
 
 function validateUploadForm(e) {
@@ -11,8 +11,6 @@ function validateUploadForm(e) {
   const OPTIONS = document.getElementById("options").value;
   const EMAIL = document.getElementById("email").value.trim();
   const IMAGE = document.getElementById("image-upload").value;
-
-
 
   let valid = true;
 
@@ -57,8 +55,9 @@ function saveData(USER, OPTIONS, EMAIL, FILE) {
 }
 
 function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return EMAIL_REGEX.test(email);
 }
 
+// Start validation listener
 listenForValidation();

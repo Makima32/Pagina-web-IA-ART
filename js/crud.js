@@ -13,7 +13,8 @@ let postUsersArray = [
     user: "Turboabuela777",
     options: "IA",
     image: "/img/imagenes-usuarios-subidas/makima-AI.png"
-  }, {
+  },
+  {
     user: "Viktor",
     options: "IA",
     image: "/img/imagenes-usuarios-subidas/vivy-AI.png"
@@ -21,7 +22,7 @@ let postUsersArray = [
 ];
 
 function showPostUsers() {
-  const postUserDiv = document.getElementById("user-art-div");
+  const POST_USER_DIV = document.getElementById("user-art-div");
 
   let allUploadUsers = "";
   for (let i = 0; i < postUsersArray.length; i++) {
@@ -34,36 +35,36 @@ function showPostUsers() {
     `;
   }
 
-  postUserDiv.innerHTML = allUploadUsers;
+  POST_USER_DIV.innerHTML = allUploadUsers;
 }
 
 function listenForLinkSubmit() {
-  const uploadForm = document.getElementById("upload-form");
-  uploadForm.addEventListener("submit", insertPostInArrayAndShow);
+  const UPLOAD_FORM = document.getElementById("upload-form");
+  UPLOAD_FORM.addEventListener("submit", insertPostInArrayAndShow);
 }
 
 function insertPostInArray(e) {
   e.preventDefault();
 
-  const user = document.getElementById("user").value;
-  const options = document.getElementById("options").value;
-  const imageUpload = document.getElementById("image-upload").files[0];
+  const USER = document.getElementById("user").value;
+  const OPTIONS = document.getElementById("options").value;
+  const IMAGE_UPLOAD = document.getElementById("image-upload").files[0];
 
-  const reader = new FileReader();
+  const READER = new FileReader();
 
-  reader.onload = function (event) {
-    const imageUrl = event.target.result;
+  READER.onload = function (event) {
+    const IMAGE_URL = event.target.result;
 
     postUsersArray.push({
-      user: user,
-      options: options,
-      image: imageUrl
+      user: USER,
+      options: OPTIONS,
+      image: IMAGE_URL
     });
 
     showPostUsers();
   };
 
-  reader.readAsDataURL(imageUpload);
+  READER.readAsDataURL(IMAGE_UPLOAD);
 }
 
 function insertPostInArrayAndShow(e) {
@@ -71,18 +72,14 @@ function insertPostInArrayAndShow(e) {
 }
 
 function listenForDeleteButton() {
-  const deleteButton = document.getElementById("delete-all-img-button");
-  deleteButton.addEventListener("click", deleteAllImages);
+  const DELETE_BUTTON = document.getElementById("delete-all-img-button");
+  DELETE_BUTTON.addEventListener("click", deleteAllImages);
 }
+
 function deleteAllImages() {
   postUsersArray = [];
-
   showPostUsers();
 }
-
-
-
-
 
 // Start functions
 showPostUsers();

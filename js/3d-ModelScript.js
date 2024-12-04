@@ -1,55 +1,55 @@
-// Configuración básica de la escena, cámara y renderizador
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+// Basic configuration for scene, camera, and renderer
+const SCENE = new THREE.Scene();
+const CAMERA = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const RENDERER = new THREE.WebGLRenderer({ antialias: true });
 
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement); // Agregar el canvas al body o a un contenedor específico
+RENDERER.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(RENDERER.domElement); // Add the canvas to the body or a specific container
 
-// Añadir luz ambiental y direccional
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-scene.add(ambientLight);
+// Add ambient and directional light
+const AMBIENT_LIGHT = new THREE.AmbientLight(0xffffff, 0.6);
+SCENE.add(AMBIENT_LIGHT);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 5, 5);
-scene.add(directionalLight);
+const DIRECTIONAL_LIGHT = new THREE.DirectionalLight(0xffffff, 1);
+DIRECTIONAL_LIGHT.position.set(5, 5, 5);
+SCENE.add(DIRECTIONAL_LIGHT);
 
-// Configurar la posición de la cámara
-camera.position.set(0, 10, 50);
-camera.lookAt(0, 0, 0);
+// Set camera position
+CAMERA.position.set(0, 10, 50);
+CAMERA.lookAt(0, 0, 0);
 
-// Crear un grupo vacío para manejar la rotación, creo que no es necesario pero si funciona no lo toques 
-const pivot = new THREE.Group();
-scene.add(pivot);
+// Create an empty group for rotation (may not be necessary but works as intended)
+const PIVOT = new THREE.Group();
+SCENE.add(PIVOT);
 
-// Cargar el modelo 3D usando GLTFLoader
-const loader = new THREE.GLTFLoader();
-loader.load(
-  'models/prision_realm.glb', // Modelo
+// Load 3D model using GLTFLoader
+const LOADER = new THREE.GLTFLoader();
+LOADER.load(
+  'models/prision_realm.glb', // Model path
   function (gltf) {
     const model = gltf.scene;
-    pivot.add(model); // Añadir el modelo al grupo para la rotación
+    PIVOT.add(model); // Add the model to the group for rotation
 
-    // Ajustar posición, escala y rotación inicial del modelo
+    // Adjust position, scale, and initial rotation of the model
     model.position.set(0, 6, 0);
-    model.scale.set(80, 80, 80); // Escalar el modelo
-    model.rotation.set(Math.PI / 4, Math.PI / 4, 0); // Rotar 45° en los ejes X e Y
+    model.scale.set(80, 80, 80); // Scale the model
+    model.rotation.set(Math.PI / 4, Math.PI / 4, 0); // Rotate 45° on X and Y axes
 
-    console.log('Modelo cargado correctamente');
+    console.log('Model loaded successfully');
   },
   undefined,
   function (error) {
-    console.error('Error al cargar el modelo:', error);
+    console.error('Error loading the model:', error);
   }
 );
 
-// Función de animación para renderizar la escena
+// Animation function to render the scene
 function animate() {
   requestAnimationFrame(animate);
 
-  // Rotar el grupo pivot alrededor del eje Y
-  pivot.rotation.y += 0.005; // Rotación en diagonal
+  // Rotate the pivot group around the Y-axis
+  PIVOT.rotation.y += 0.005; // Diagonal rotation
 
-  renderer.render(scene, camera);
+  RENDERER.render(SCENE, CAMERA);
 }
 animate();
