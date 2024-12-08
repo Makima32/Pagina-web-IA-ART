@@ -1,14 +1,15 @@
 /* Fondo 3D */
 
-.footer{
+.footer {
 
-    text-align: center;
-    position: sticky;
-    bottom: 0px;
-    background-color: rgb(19, 22, 38, 0.8);
-    font-size: 13px;
-    height: 30px;
+  text-align: center;
+  position: sticky;
+  bottom: 0px;
+  background-color: rgb(19, 22, 38, 0.8);
+  font-size: 13px;
+  height: 30px;
 }
+
 #canvas-container {
   position: absolute;
   top: 0;
@@ -21,7 +22,7 @@
 
 /* Hero principal */
 .hero {
- 
+
   text-align: center;
   color: white;
   height: fit-content;
@@ -94,29 +95,29 @@
 /* GaleryAI-ART*/
 
 
-.div-card-container{
+.div-card-container {
 
   background-color: red;
   height: 300px;
   width: 300px;
 
-text-align: center;
+  text-align: center;
 
 
 }
 
-.div-card-container img{
+.div-card-container img {
 
   width: 100%;
   height: 100%;
-  
+
 }
 
-.div-card{
+.div-card {
 
   font-size: 15px;
   text-align: center;
-  
+
 }
 
 html,
@@ -127,8 +128,8 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-min-width: 100%;
-min-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 
@@ -136,19 +137,19 @@ min-height: 100%;
 
 .sinopsis-anime-text {
 
-  
+
   text-align: justify;
   font-size: 15px;
 
 }
 
-#anime-text-title{
+#anime-text-title {
 
- 
+
   font-size: 35px;
   text-align: center;
-  color: rgb(180, 50, 50);
 }
+
 .container-cards {
 
   position: relative;
@@ -156,7 +157,7 @@ min-height: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-margin-top: 20%;
+  margin-top: 20%;
   height: fit-content;
   font-size: large;
 }
@@ -175,7 +176,7 @@ margin-top: 20%;
   align-items: center;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 .card img {
@@ -347,9 +348,9 @@ margin-bottom: 10%;
   width: 300px;
   height: 400px;
   z-index: 1;
-border-radius: 40px;
+  border-radius: 40px;
 
-margin-bottom: 50px;
+  margin-bottom: 50px;
 
 }
 
@@ -445,14 +446,14 @@ margin-bottom: 50px;
   transition: transform 0.3s ease;
   border-radius: 50px;
   opacity: 0;
-  transform: translateY(60px); 
-  transition: opacity 0.6s ease, transform 1s ease; 
-  
+  transform: translateY(60px);
+  transition: opacity 0.6s ease, transform 1s ease;
+
 }
 
 .shop-card.visible {
   opacity: 1;
-  transform: translateY(0); 
+  transform: translateY(0);
 }
 
 
@@ -607,7 +608,7 @@ checkbox {
   border-radius: 4px;
   font-size: 10px;
   height: 60px;
-  
+
   align-items: center;
 
   position: relative;
@@ -815,6 +816,132 @@ checkbox {
 
 }
 
+
+
+.software-title-1 {
+
+
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+
+}
+
+
+.automatic-img-div img {
+
+  height: 1000px;
+  width: 600px;
+  
+}
+
+.comfyui-img-div{
+
+
+  height: 1000px;
+  width: 600px;
+}
+
+.software-tutorial-div {
+
+  display: flex;
+  text-align: center;
+
+}
+
+.automatic-text-div {
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comfyui-text-div{
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.automatic-text-div h2,
+.automatic-text-div h1 {
+  background-color: red;
+  font-size: 30px;
+  width: 100%;
+  border-radius: 20px;
+  display:flex;
+  justify-content: center;
+}
+
+
+.text-automatic-p {
+
+  text-align: justify;
+
+
+  margin-top: 50px;
+  margin-left: 60px;
+  margin-right: 60px;
+  font-size: 25px;
+
+
+}
+
+.software-tutorial-div-2{
+
+  display: flex;
+  text-align: center;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.automatic-img-div-2{
+
+
+}
+
+.automatic-img-div-2 img{
+
+  height: 1000px;
+  width: 600px;
+  
+
+}
+
+
+.software-tutorial-div-2 h1,
+.software-tutorial-div-2 h2 {
+
+  background-color: red;
+  font-size: 30px;
+  width: 100%;
+  border-radius: 20px;
+  display:flex;
+  justify-content: center;
+  
+
+}
+
+.software-tutorial-div-2{
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
 @media only screen and (max-width: 600px) {
   .shop-container {
     align-items: center;
@@ -890,7 +1017,7 @@ checkbox {
 @media (min-width: 1024px) {
   .form-container {
     padding: 20px;
-    
+
   }
 
   .form-group input,
@@ -1338,27 +1465,28 @@ Hover Effects .card:hover {
 
   .art-container {
     display: flex;
-    
+
     flex-direction: row;
     flex-wrap: wrap;
     gap: 50px;
     align-items: center;
     justify-content: center;
-    
+
   }
 
   .art-container img {
     width: 80%;
     height: 550px;
-    
+
   }
 
-  .parameters-image-left{
+  .parameters-image-left {
 
     width: 100%;
     padding: 10px;
   }
-  .parameters-image-right{
+
+  .parameters-image-right {
     width: 100%;
     padding: 10px;
     left: 3px;
